@@ -1,46 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px;
-`;
-
-const Title = styled.h1`
-  text-align: center;
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Label = styled.label`
-  margin-bottom: 10px;
-`;
-
-const Input = styled.input`
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 15px;
-`;
-
-const Button = styled.button`
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-`;
-
-const Response = styled.div`
-  margin-top: 20px; 
-`;
+import './App.css'; // Import the CSS file
 
 function App() {
   const [description, setDescription] = useState('');
@@ -72,21 +31,21 @@ function App() {
   };
 
   return (
-    <Container>
-      <Title>Daily Listener</Title>
-      <Form onSubmit={handleSubmit}>
-        <Label htmlFor="day-description">How was your day?</Label> 
-        <Input 
+    <div className="container"> 
+      <h1 className="title">Daily Listener</h1> 
+      <form onSubmit={handleSubmit}> 
+        <label htmlFor="day-description">How was your day?</label> 
+        <input 
           type="text" 
           id="day-description" 
           name="day-description" 
           value={description} 
           onChange={(event) => setDescription(event.target.value)} 
         />
-        <Button type="submit">Tell me :)</Button>
-      </Form>
-      <Response>{response}</Response> 
-    </Container>
+        <button type="submit">Tell me :)</button>
+      </form>
+      <div className="response">{response}</div> 
+    </div>
   );
 }
 
