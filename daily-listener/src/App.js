@@ -9,7 +9,7 @@ function App() {
     event.preventDefault();
 
     try {
-      const response = await fetch('/your-api-endpoint', {
+      const response = await fetch('/api/v1/get-day-response', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
